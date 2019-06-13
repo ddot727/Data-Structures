@@ -29,7 +29,6 @@ class BinarySearchTree:
                 self.right.insert(value)
 
     def contains(self, target):
-        pass
         # searches the binary search tree for the input value, returning a boolean indicating whether the value exists in the tree or not
         # 1. compare target to current node
         # 2. if matched, return true
@@ -53,8 +52,13 @@ class BinarySearchTree:
             return False
 
     def get_max(self):
-        pass
         # returns the maximum value in the binary search tree
+        # highest value in BST is either root (if theres no right value) or somewhere right of the root
+        if not self.right:
+            return self.value
+        while self.right:
+            self = self.right
+        return self.value
 
     def for_each(self, cb):
         pass
